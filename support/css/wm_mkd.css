@@ -1,155 +1,52 @@
-/*
-	Defines the style of HTML Output. To be used in conjunction with `../lib/webpreview.sh`.
-	
-	In Flux: http://macromates.com/wiki/Suggestions/StylingHTMLOutput
-	
-	I'm not sure whether all the styles should really go in here or if we leave the css in the bundles and include them dynamically. I've copied all things here to make it easier for me mostly while experimenting.
-	— Soryu
-*/
-
-/* =================== */
-/* = General Styling = */
-/* =================== */
 body {
-	margin: 0;
-	padding: 0;
-
 	color: #000000;
 	background: #FFFFFF;
-	font: 13px "Trebuchet MS", Helvetica, sans-serif;
-}
-
-#tm_webpreview_footer {
-	position: fixed;
-	bottom: 0px;
-
-	width: 100%;
-	height: 1.6em;
-
-	margin: 0;
-	padding: 0.3em 2em 0 2em;
-
-	color: #777;
-	background: #292929;
-	text-shadow: #000 1px 3px 3px;
-
-	border-top: 2px solid #000;
-}
-#tm_webpreview_footer p {
+	font: 13px Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
-#tm_webpreview_content {
+#content {
 	padding: 0.5em 2em 0.5em 2em;
-/*	margin-top: 6em;*/
 }
 
-#tm_webpreview_content :first-child {
+#content :first-child {
 	margin-top: 0;
 }
 
-h1 {
-/*	font-family: "LucidaGrande";*/
-	font-weight: bolder;
+a {
+	color: #0D2681;
 }
 
-h4 {
-	font-style: italic;
-	margin-top: 1ex;
-	margin-bottom: 1ex;
+h1 {
+	font-weight: bolder;
+	text-shadow:  #DDDDDD 3px 3px 5px;
+	color: #333;
+}
+
+h2 {
+	color: #222;
+	text-shadow:  #DDDDDD 3px 3px 5px;
+}
+
+h3 {
+	color: #333;
+	text-shadow:  #DDDDDD 3px 3px 5px;
 }
 
 blockquote {
-/*	font-family: "Palatino", "Book Antiqua", Verdana;*/
 	font-style: italic;
-/*	font-size: 106%;*/
-
 	margin: 1em 25px;
 	padding-left: 1em;
+	border-left: 4px solid #E6E5DD;
 }
 
 code, pre {
-	font-size: 95%;
-	font-family: "LuxiMono", "Bitstream Vera Sans Mono", "Monaco", "Courier New", monospace;
+	font-family: "Bitstream Vera Sans Mono", "Monaco", "Courier New", monospace;
 	word-wrap: break-word;
-	white-space: pre;
-	white-space: pre-wrap;
-	white-space: -moz-pre-wrap;
-	white-space: -o-pre-wrap;
+	color: #1C360C;
 }
 
 pre {
 	padding: 10px 10px 10px 20px;
-}
-
-.pro_table {
-	font-size: 12px;
-}
-.pro_table th {
-	font-weight: bold;
-	padding: 4px 8px 4px 8px;
-	text-align: left;
-}
-.pro_table td {
-	padding: 8px;
-	vertical-align: top;
-}
-.pro_table p {
-	margin: 0;
-}
-.pro_table p + p {
-	margin-top: 1em;
-}
-
-li > p {
-	margin: 1ex 0 1ex 0;
-}
-
-.footnote {
-	vertical-align: top;
-	font-size: 75%;
-	font-weight: bold;
-	text-decoration: none;
-}
-.footnote:before {
-	content: "[";
-	vertical-align: top;
-	font-weight: bold;
-}
-.footnote:after {
-	content: "]";
-	vertical-align: top;
-	font-weight: bold;
-}
-
-div.footnotes {
-   padding: 1em;
-   font-size: 90%;
-}
-
-hr {
-	background: #606060;
-	color:  #606060;
-	border-style: solid;
-	border-color: #606060;
-	border-width: 1px 0 0 0;
-	margin-top: 0;
-}
-
-.alternate {
-	background-color: #F0F0F0;
-}
-
-.toc {
-	position: fixed;
-	top: 10px;
-	right: 10px;
-	background-color: white;
-	border: 1px solid #999;
-	padding: 20px;
-}
-
-.toc a {
-	text-decoration: none;
 }
