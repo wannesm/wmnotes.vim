@@ -42,9 +42,15 @@ blockquote {
 }
 
 code, pre {
+	font-size: 95%;
 	font-family: "Bitstream Vera Sans Mono", "Monaco", "Courier New", monospace;
 	word-wrap: break-word;
 	color: #1C360C;
+}
+
+pre {
+	border: 1px solid #b3b3b3;
+	background-color: #f2f0ea
 }
 
 pre {

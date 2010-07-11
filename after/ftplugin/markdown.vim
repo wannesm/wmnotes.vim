@@ -1,3 +1,7 @@
+" Markdown extension for Vim
+" Author: Wannes Meert
+" Email: wannesm@gmail.com
+
 if exists("b:did_wmnotes")
   finish
 endif
@@ -5,7 +9,11 @@ let b:did_wmnotes = 1
 
 set ai formatoptions=tcroqn2 comments=n:>
 
-function! PreviewMDK()
+" Location of support folder
+let g:WMMarkdown_support = expand("<sfile>:h:h:h") . '/support/css'
+
+" Preview
+function! PreviewMarkdown()
 python << EOF
 import markdown
 import vim
@@ -15,13 +23,18 @@ md = markdown.Markdown()
 markdown.markdownFromFile(input=mkd_file, output="/tmp/markdown.html",  extensions=[], encoding=None)
 EOF
 
-!echo "<html><head><title>Preview</title><link rel=\"stylesheet\" href=\"/Users/wannes/.vim/bundle/wmnotes.vim.git/support/css/wm_mkd.css\" type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"></head><body><div id='content'>" > /tmp/markdown2.html
+let s:header = '"<html><head><title>Preview</title><link rel=\"stylesheet\" href=\"'.g:WMMarkdown_support.'/wm_mkd.css\" type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"></head><body><div id=\"content\">"'
+
+let s:cmd = '!echo '.s:header.'  > /tmp/markdown2.html'
+echomsg s:cmd
+exec s:cmd
 !cat /tmp/markdown.html >> /tmp/markdown2.html
 !echo "</div></body></html>" >> /tmp/markdown2.html
 
 !open "/tmp/markdown2.html"
 endfunction
 
-map <silent> <Leader>p :call PreviewMDK()<CR>
-noremap <silent> <D-r> :call PreviewMDK()<CR>
+" Key mappings
+nmap <buffer> <LocalLeader>ll :silent call PreviewMarkdown()<CR>
+nmap <buffer> <LocalLeader>lv :silent call PreviewMarkdown()<CR>
 
