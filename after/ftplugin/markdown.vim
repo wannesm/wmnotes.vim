@@ -23,7 +23,7 @@ md = markdown.Markdown()
 markdown.markdownFromFile(input=mkd_file, output="/tmp/markdown.html",  extensions=[], encoding=None)
 EOF
 
-let s:header = '"<html><head><title>Preview</title><link rel=\"stylesheet\" href=\"'.g:WMMarkdown_support.'/wm_mkd.css\" type=\"text/css\" media=\"screen\" title=\"no title\" charset=\"utf-8\"></head><body><div id=\"content\">"'
+let s:header = '"<html><head><title>Preview</title><link rel=\"stylesheet\" href=\"'.g:WMMarkdown_support.'/wm_mkd.css\" type=\"text/css\" title=\"no title\" charset=\"utf-8\"><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" /><script type=\"text/javascript\" src=\"/usr/local/mathjax/MathJax.js\"></script></head><body><div id=\"content\">"'
 
 let s:cmd = '!echo '.s:header.'  > /tmp/markdown2.html'
 echomsg s:cmd
